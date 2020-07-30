@@ -48,17 +48,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         appBar: new AppBar(
           title: new Text("Utils App"),
           backgroundColor: Colors.black26,
-        ),
-        body: new TabBarView(
-          children: <Widget>[
-            new NewPage("first"),
-            new NewPage("Second"),
-          ],
-          controller: tabController,
-        ),
-        bottomNavigationBar: new Material(
-          color:Colors.black26,
-          child:new TabBar(
+          bottom:new TabBar(
             controller:tabController,
             tabs: <Widget>[
             new Tab(
@@ -74,6 +64,20 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           ),
 
         ),
+
+        body: new TabBarView(
+          children: <Widget>[
+            new NewPage("first"),
+            new NewPage("Second"),
+          ],
+          controller: tabController,
+        ),
+        floatingActionButton: new FloatingActionButton(
+          backgroundColor:Colors.orange,
+          child:new Icon(Icons.add),
+          onPressed: ()=>print("floating btn pressed")
+        ),
+         
         );
   }
 }
